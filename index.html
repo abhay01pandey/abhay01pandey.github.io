@@ -1,499 +1,516 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Abhay Pandey | Data Analyst</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abhay Pandey | Data Analyst</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #07111f;
+      color: #e8eef7;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    /* NAVBAR */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(7, 17, 31, 0.95);
+      border-bottom: 1px solid #1c2b42;
+      backdrop-filter: blur(10px);
+    }
+
+    .nav-inner {
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .logo span {
+      color: #6d8cff;
+    }
 
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #080b16;
-    color: #f5f7ff;
-    line-height: 1.6;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-.container {
-    width: min(1120px, 92%);
-    margin: auto;
-}
-
-/* NAVBAR */
-nav {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background: rgba(8,11,22,0.92);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid #1d2335;
-}
-
-.nav-inner {
-    height: 72px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.logo {
-    font-size: 22px;
-    font-weight: 700;
-}
-
-.logo span {
-    color: #7c5cff;
-}
-
-.nav-links {
-    display: flex;
-    gap: 26px;
-    list-style: none;
-}
-
-.nav-links a {
-    color: #b7bfd4;
-    font-size: 14px;
-    transition: 0.3s;
-}
-
-.nav-links a:hover {
-    color: #8c7cff;
-}
-
-/* HERO */
-.hero {
-    padding: 105px 0 80px;
-    text-align: center;
-    background:
-        radial-gradient(circle at 50% 20%, rgba(92,75,255,0.18), transparent 35%);
-}
-
-.badge {
-    display: inline-block;
-    padding: 8px 15px;
-    border: 1px solid #343b57;
-    border-radius: 30px;
-    color: #aeb7d0;
-    font-size: 13px;
-    margin-bottom: 22px;
-}
-
-.hero h1 {
-    font-size: clamp(42px, 7vw, 76px);
-    line-height: 1.05;
-    margin-bottom: 15px;
-}
-
-.hero h1 span {
-    background: linear-gradient(90deg, #8b78ff, #42bfff);
-    -webkit-background-clip: text;
-    color: transparent;
-}
-
-.hero h2 {
-    font-size: 25px;
-    color: #c5cbdb;
-    margin-bottom: 18px;
-}
-
-.hero p {
-    max-width: 680px;
-    margin: auto;
-    color: #9ca5bb;
-    font-size: 17px;
-}
-
-.buttons {
-    margin-top: 32px;
-    display: flex;
-    justify-content: center;
-    gap: 14px;
-    flex-wrap: wrap;
-}
-
-.btn {
-    padding: 12px 21px;
-    border-radius: 9px;
-    border: 1px solid #343b57;
-    font-size: 14px;
-    transition: 0.3s;
-}
-
-.btn-primary {
-    background: linear-gradient(135deg, #735cff, #4a8dff);
-    border: none;
-}
-
-.btn:hover {
-    transform: translateY(-2px);
-    border-color: #7568ff;
-}
-
-/* STATS */
-.stats {
-    padding: 25px 0 70px;
-}
-
-.stats-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
-}
-
-.stat {
-    background: #0e1220;
-    border: 1px solid #20263a;
-    border-radius: 14px;
-    padding: 25px 15px;
-    text-align: center;
-}
-
-.stat h3 {
-    font-size: 28px;
-    color: #8b7cff;
-}
-
-.stat p {
-    color: #8f98ad;
-    font-size: 13px;
-}
-
-/* SECTIONS */
-section {
-    padding: 85px 0;
-}
-
-.section-title {
-    margin-bottom: 40px;
-}
-
-.section-title .small {
-    color: #8071ff;
-    text-transform: uppercase;
-    font-size: 12px;
-    letter-spacing: 2px;
-    font-weight: bold;
-}
-
-.section-title h2 {
-    font-size: 34px;
-    margin-top: 7px;
-}
-
-.section-title p {
-    color: #919aae;
-    margin-top: 8px;
-}
-
-/* CARDS */
-.card {
-    background: #0e1220;
-    border: 1px solid #20263a;
-    border-radius: 16px;
-    padding: 27px;
-}
-
-.card h3 {
-    margin-bottom: 9px;
-}
-
-.card p {
-    color: #969fb5;
-}
-
-/* ABOUT */
-.about-grid {
-    display: grid;
-    grid-template-columns: 1.3fr 1fr;
-    gap: 25px;
-}
-
-.about-text p {
-    margin-bottom: 15px;
-}
-
-/* OVERVIEW */
-.overview-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
-}
-
-.metric {
-    background: #0e1220;
-    border: 1px solid #20263a;
-    padding: 25px;
-    border-radius: 15px;
-}
-
-.metric .number {
-    font-size: 30px;
-    font-weight: bold;
-    color: #7d70ff;
-}
-
-.metric p {
-    color: #929bb0;
-    font-size: 14px;
-}
-
-/* SKILLS */
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
-}
-
-.skill-box h3 {
-    margin-bottom: 15px;
-}
-
-.tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-}
-
-.tag {
-    padding: 7px 11px;
-    border-radius: 7px;
-    background: #171c2d;
-    border: 1px solid #272e45;
-    color: #b8c0d4;
-    font-size: 12px;
-}
-
-/* EXPERIENCE */
-.experience {
-    border-left: 2px solid #695cff;
-    padding-left: 25px;
-}
-
-.experience h3 {
-    font-size: 22px;
-}
-
-.company {
-    color: #8275ff;
-    margin: 5px 0;
-}
-
-.date {
-    color: #747e96;
-    font-size: 13px;
-    margin-bottom: 15px;
-}
-
-.experience ul {
-    padding-left: 20px;
-    color: #9ca5ba;
-}
-
-.experience li {
-    margin-bottom: 9px;
-}
-
-/* PROJECTS */
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-.project {
-    display: flex;
-    flex-direction: column;
-    min-height: 330px;
-}
-
-.project-number {
-    color: #7365ff;
-    font-size: 13px;
-    margin-bottom: 14px;
-}
-
-.project h3 {
-    font-size: 20px;
-}
-
-.project .tech {
-    color: #7f8aff;
-    font-size: 13px;
-    margin: 10px 0 15px;
-}
-
-.project ul {
-    padding-left: 18px;
-    color: #949db2;
-    font-size: 14px;
-}
-
-.project li {
-    margin-bottom: 7px;
-}
-
-.project-link {
-    margin-top: auto;
-    padding-top: 20px;
-    color: #8d80ff;
-    font-size: 14px;
-}
-
-/* EDUCATION */
-.education-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-
-.education-item {
-    background: #0e1220;
-    border: 1px solid #20263a;
-    border-radius: 15px;
-    padding: 25px;
-}
-
-.education-item h3 {
-    margin-bottom: 7px;
-}
-
-.education-item p {
-    color: #949db2;
-}
-
-.education-date {
-    color: #8073ff !important;
-    font-size: 13px;
-    margin-top: 8px;
-}
-
-/* CERTIFICATES */
-.cert-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-}
-
-.cert {
-    background: #0e1220;
-    border: 1px solid #20263a;
-    padding: 21px;
-    border-radius: 13px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 15px;
-}
-
-.cert h3 {
-    font-size: 16px;
-}
-
-.cert p {
-    color: #858ea5;
-    font-size: 13px;
-    margin-top: 4px;
-}
-
-.cert a {
-    color: #8b7dff;
-    font-size: 13px;
-    white-space: nowrap;
-}
-
-/* CONTACT */
-.contact {
-    text-align: center;
-    background: radial-gradient(circle at center, rgba(91,75,255,0.12), transparent 45%);
-}
-
-.contact p {
-    max-width: 600px;
-    margin: 12px auto 0;
-    color: #959eb3;
-}
-
-.contact-buttons {
-    margin-top: 28px;
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    flex-wrap: wrap;
-}
-
-/* FOOTER */
-footer {
-    border-top: 1px solid #1d2335;
-    padding: 25px 0;
-    text-align: center;
-    color: #69738b;
-    font-size: 13px;
-}
-
-/* MOBILE */
-@media (max-width: 850px) {
     .nav-links {
-        display: none;
+      display: flex;
+      gap: 25px;
+      list-style: none;
     }
 
-    .stats-grid,
-    .overview-grid,
-    .skills-grid,
-    .projects-grid,
-    .about-grid,
-    .education-grid,
-    .cert-grid {
-        grid-template-columns: 1fr;
+    .nav-links a {
+      color: #aebbd0;
+      font-size: 14px;
+      transition: 0.3s;
     }
 
-    section {
-        padding: 65px 0;
+    .nav-links a:hover {
+      color: #7c9cff;
     }
 
+    /* HERO */
     .hero {
-        padding: 80px 0 55px;
+      padding: 100px 0 80px;
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 7px 14px;
+      border: 1px solid #263b61;
+      border-radius: 30px;
+      color: #8eaaff;
+      background: #0c1a30;
+      font-size: 13px;
+      margin-bottom: 22px;
     }
 
     .hero h1 {
-        font-size: 48px;
+      font-size: clamp(45px, 8vw, 76px);
+      line-height: 1.05;
+      margin-bottom: 15px;
     }
-}
-</style>
+
+    .hero h1 span {
+      color: #728fff;
+    }
+
+    .hero h2 {
+      font-size: 25px;
+      color: #a9b8ce;
+      margin-bottom: 18px;
+      font-weight: 500;
+    }
+
+    .hero p {
+      max-width: 700px;
+      color: #8f9db1;
+      font-size: 17px;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      padding: 12px 20px;
+      border-radius: 8px;
+      border: 1px solid #2b4269;
+      background: #0d1b30;
+      color: #dce6f5;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      border-color: #718dff;
+    }
+
+    .btn.primary {
+      background: #657fff;
+      color: white;
+      border-color: #657fff;
+    }
+
+    /* STATS */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      margin-bottom: 80px;
+    }
+
+    .stat {
+      background: #0b182b;
+      border: 1px solid #1b2c46;
+      border-radius: 14px;
+      padding: 25px;
+    }
+
+    .stat h3 {
+      font-size: 29px;
+      color: #7894ff;
+      margin-bottom: 5px;
+    }
+
+    .stat p {
+      color: #8998ad;
+      font-size: 13px;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 75px 0;
+      border-top: 1px solid #14243a;
+    }
+
+    .section-title {
+      margin-bottom: 35px;
+    }
+
+    .section-title small {
+      color: #708dff;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+    }
+
+    .section-title h2 {
+      font-size: 34px;
+      margin-top: 7px;
+    }
+
+    .section-title p {
+      color: #8594a9;
+      max-width: 700px;
+      margin-top: 8px;
+    }
+
+    /* OVERVIEW */
+    .overview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .overview-card {
+      padding: 28px;
+      background: #0b182b;
+      border: 1px solid #1b2c46;
+      border-radius: 15px;
+    }
+
+    .overview-card h3 {
+      font-size: 30px;
+      color: #7894ff;
+    }
+
+    .overview-card p {
+      color: #8b99ad;
+      margin-top: 5px;
+      font-size: 14px;
+    }
+
+    /* ABOUT */
+    .about-text {
+      max-width: 850px;
+      color: #9ba8ba;
+      font-size: 16px;
+    }
+
+    .about-text p {
+      margin-bottom: 15px;
+    }
+
+    /* SKILLS */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .skill-card {
+      background: #0b182b;
+      border: 1px solid #1b2c46;
+      padding: 25px;
+      border-radius: 15px;
+    }
+
+    .skill-card h3 {
+      margin-bottom: 15px;
+      font-size: 18px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      background: #101f35;
+      border: 1px solid #203451;
+      color: #a9b8ce;
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+    }
+
+    /* EXPERIENCE */
+    .experience-card {
+      background: #0b182b;
+      border: 1px solid #1b2c46;
+      padding: 30px;
+      border-radius: 15px;
+    }
+
+    .experience-card h3 {
+      font-size: 21px;
+    }
+
+    .experience-card .company {
+      color: #7894ff;
+      margin: 5px 0;
+    }
+
+    .experience-card .date {
+      color: #718095;
+      font-size: 13px;
+      margin-bottom: 18px;
+    }
+
+    .experience-card ul {
+      padding-left: 20px;
+      color: #9ba8ba;
+    }
+
+    /* PROJECTS */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .project-card {
+      background: #0b182b;
+      border: 1px solid #1b2c46;
+      border-radius: 15px;
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+      transition: 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      border-color: #607cff;
+    }
+
+    .project-card h3 {
+      font-size: 19px;
+      margin-bottom: 10px;
+    }
+
+    .project-card p {
+      color: #8e9caf;
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    .project-link {
+      margin-top: auto;
+      color: #7894ff;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    /* OTHER PROJECTS */
+    .other-projects {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .other-project {
+      background: #0a1729;
+      border: 1px solid #192b45;
+      border-radius: 12px;
+      padding: 20px;
+      transition: 0.3s;
+    }
+
+    .other-project:hover {
+      border-color: #617dff;
+      transform: translateY(-2px);
+    }
+
+    .other-project h3 {
+      font-size: 16px;
+      margin-bottom: 6px;
+    }
+
+    .other-project p {
+      color: #7f8da2;
+      font-size: 13px;
+      margin-bottom: 8px;
+    }
+
+    .other-project a {
+      color: #7894ff;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    /* EDUCATION */
+    .education-card {
+      background: #0b182b;
+      border: 1px solid #1b2c46;
+      border-radius: 15px;
+      padding: 28px;
+    }
+
+    .education-card h3 {
+      font-size: 20px;
+    }
+
+    .education-card p {
+      color: #8d9bad;
+      margin-top: 5px;
+    }
+
+    /* CERTIFICATIONS */
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    .cert-card {
+      background: #0b182b;
+      border: 1px solid #1b2c46;
+      border-radius: 13px;
+      padding: 22px;
+    }
+
+    .cert-card h3 {
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    .cert-card a {
+      color: #7894ff;
+      font-size: 13px;
+    }
+
+    /* CONTACT */
+    .contact-box {
+      text-align: center;
+      background: #0b182b;
+      border: 1px solid #1b2c46;
+      border-radius: 18px;
+      padding: 50px 25px;
+    }
+
+    .contact-box h2 {
+      font-size: 35px;
+      margin-bottom: 10px;
+    }
+
+    .contact-box p {
+      color: #8b99ad;
+      margin-bottom: 25px;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #68778d;
+      font-size: 13px;
+      border-top: 1px solid #14243a;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 850px) {
+      .nav-links {
+        display: none;
+      }
+
+      .stats,
+      .overview-grid,
+      .skills-grid,
+      .projects-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero {
+        padding: 70px 0 60px;
+      }
+
+      .stats,
+      .overview-grid,
+      .skills-grid,
+      .projects-grid,
+      .other-projects,
+      .cert-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 48px;
+      }
+
+      section {
+        padding: 55px 0;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
+<!-- NAVBAR -->
 <nav>
-<div class="container nav-inner">
-    <a href="#" class="logo">Abhay<span>.</span></a>
+  <div class="container nav-inner">
+    <div class="logo">Abhay<span>.</span></div>
 
     <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#credentials">Credentials</a></li>
-        <li><a href="#contact">Contact</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
-</div>
+  </div>
 </nav>
+
 
 <!-- HERO -->
 <header class="hero">
-<div class="container">
+  <div class="container hero-content">
 
     <div class="badge">Open to Data Analytics Opportunities</div>
 
@@ -502,463 +519,409 @@ footer {
     <h2>Data Analyst</h2>
 
     <p>
-        I turn raw data into meaningful insights using SQL, Python,
-        Power BI and Excel to support data-driven business decisions.
+      I turn raw data into meaningful insights using SQL, Python,
+      Power BI and Excel, with a focus on data cleaning, analysis,
+      visualization and business problem solving.
     </p>
 
     <div class="buttons">
-        <a href="#contact" class="btn btn-primary">Let's Connect</a>
+      <a class="btn primary" href="#contact">Let's Connect</a>
 
-        <a href="https://github.com/abhay01pandey"
-           target="_blank" class="btn">GitHub</a>
+      <a class="btn"
+         href="https://github.com/abhay01pandey"
+         target="_blank">
+        GitHub
+      </a>
 
-        <a href="https://www.linkedin.com/in/abhaypandey18"
-           target="_blank" class="btn">LinkedIn</a>
+      <a class="btn"
+         href="https://www.linkedin.com/in/abhaypandey18"
+         target="_blank">
+        LinkedIn
+      </a>
 
-        <a href="https://drive.google.com/file/d/1Ix95l72szKxXoxfws69rARVUlw-ivB7u/view?usp=drivesdk"
-           target="_blank" class="btn">Download Resume</a>
+      <a class="btn"
+         href="https://drive.google.com/file/d/1Ix95l72szKxXoxfws69rARVUlw-ivB7u/view?usp=drivesdk"
+         target="_blank">
+        Download Resume
+      </a>
     </div>
 
-</div>
+  </div>
 </header>
 
+
 <!-- STATS -->
-<div class="stats">
-<div class="container stats-grid">
+<div class="container stats">
 
-    <div class="stat">
-        <h3>3</h3>
-        <p>Featured Projects</p>
-    </div>
+  <div class="stat">
+    <h3>3</h3>
+    <p>Featured Projects</p>
+  </div>
 
-    <div class="stat">
-        <h3>6.4K+</h3>
-        <p>Customer Records Analysed</p>
-    </div>
+  <div class="stat">
+    <h3>6.4K+</h3>
+    <p>Customer Records Analysed</p>
+  </div>
 
-    <div class="stat">
-        <h3>3.9K+</h3>
-        <p>Transactions Analysed</p>
-    </div>
+  <div class="stat">
+    <h3>3.9K+</h3>
+    <p>Transactions Analysed</p>
+  </div>
 
-    <div class="stat">
-        <h3>27%</h3>
-        <p>Overall Churn Identified</p>
-    </div>
+  <div class="stat">
+    <h3>27%</h3>
+    <p>Overall Churn Identified</p>
+  </div>
 
 </div>
-</div>
+
 
 <!-- ANALYTICS OVERVIEW -->
 <section>
-<div class="container">
+  <div class="container">
 
     <div class="section-title">
-        <div class="small">Analytics Overview</div>
-        <h2>Data-driven project outcomes</h2>
-        <p>Selected insights from my analytics projects.</p>
+      <small>Analytics Overview</small>
+      <h2>Turning Data Into Insights</h2>
+      <p>
+        Selected findings from my data analytics projects.
+      </p>
     </div>
 
     <div class="overview-grid">
 
-        <div class="metric">
-            <div class="number">46.5%</div>
-            <p>Higher churn among month-to-month customers identified in telecom analysis.</p>
-        </div>
+      <div class="overview-card">
+        <h3>46.5%</h3>
+        <p>
+          Higher churn among month-to-month customers
+        </p>
+      </div>
 
-        <div class="metric">
-            <div class="number">41.1%</div>
-            <p>Churn identified among fiber customers in telecom analysis.</p>
-        </div>
+      <div class="overview-card">
+        <h3>41.1%</h3>
+        <p>
+          Churn identified among fiber customers
+        </p>
+      </div>
 
-        <div class="metric">
-            <div class="number">14%</div>
-            <p>Projected churn reduction through proposed retention strategies.</p>
-        </div>
+      <div class="overview-card">
+        <h3>14%</h3>
+        <p>
+          Projected churn reduction from proposed retention strategies
+        </p>
+      </div>
 
     </div>
 
-</div>
+  </div>
 </section>
+
 
 <!-- ABOUT -->
 <section id="about">
-<div class="container">
+  <div class="container">
 
     <div class="section-title">
-        <div class="small">About Me</div>
-        <h2>Turning data into insights</h2>
+      <small>About Me</small>
+      <h2>Data Analyst focused on practical insights</h2>
     </div>
 
-    <div class="about-grid">
+    <div class="about-text">
 
-        <div class="card about-text">
-            <p>
-                I am a B.Tech Information Technology graduate focused on
-                Data Analytics and business intelligence.
-            </p>
+      <p>
+        I am a B.Tech Information Technology graduate interested in
+        Data Analytics and business intelligence.
+      </p>
 
-            <p>
-                My work involves data cleaning, exploratory analysis,
-                KPI tracking, customer analysis and dashboard development.
-            </p>
+      <p>
+        My work focuses on cleaning and analysing datasets,
+        identifying patterns, tracking KPIs and building dashboards
+        that make data easier to understand.
+      </p>
 
-            <p>
-                I enjoy working with SQL, Python, Power BI and Excel to
-                transform raw datasets into clear and actionable insights.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>Core Proficiencies</h3>
-
-            <div class="tags" style="margin-top:18px;">
-                <span class="tag">SQL</span>
-                <span class="tag">Python</span>
-                <span class="tag">Power BI</span>
-                <span class="tag">DAX</span>
-                <span class="tag">Excel</span>
-                <span class="tag">Power Query</span>
-                <span class="tag">Pandas</span>
-                <span class="tag">MySQL</span>
-                <span class="tag">EDA</span>
-                <span class="tag">KPI Analysis</span>
-            </div>
-        </div>
+      <p>
+        I work primarily with SQL, Python, Power BI and Excel and
+        enjoy solving business problems through data.
+      </p>
 
     </div>
 
-</div>
+  </div>
 </section>
+
 
 <!-- SKILLS -->
 <section id="skills">
-<div class="container">
+  <div class="container">
 
     <div class="section-title">
-        <div class="small">Skills & Stack</div>
-        <h2>Tools I work with</h2>
+      <small>Skills & Stack</small>
+      <h2>Core Proficiencies</h2>
     </div>
 
     <div class="skills-grid">
 
-        <div class="card skill-box">
-            <h3>Data Analysis</h3>
+      <div class="skill-card">
+        <h3>Data Analysis</h3>
 
-            <div class="tags">
-                <span class="tag">Data Cleaning</span>
-                <span class="tag">EDA</span>
-                <span class="tag">KPI Tracking</span>
-                <span class="tag">Churn Analysis</span>
-                <span class="tag">Customer Segmentation</span>
-            </div>
+        <div class="tags">
+          <span class="tag">Data Cleaning</span>
+          <span class="tag">EDA</span>
+          <span class="tag">KPI Tracking</span>
+          <span class="tag">Churn Analysis</span>
+          <span class="tag">Customer Segmentation</span>
         </div>
+      </div>
 
-        <div class="card skill-box">
-            <h3>BI & Excel</h3>
+      <div class="skill-card">
+        <h3>Programming & SQL</h3>
 
-            <div class="tags">
-                <span class="tag">Power BI</span>
-                <span class="tag">DAX</span>
-                <span class="tag">Data Modeling</span>
-                <span class="tag">Advanced Excel</span>
-                <span class="tag">Power Query</span>
-            </div>
+        <div class="tags">
+          <span class="tag">SQL</span>
+          <span class="tag">Python</span>
+          <span class="tag">Pandas</span>
+          <span class="tag">NumPy</span>
+          <span class="tag">MySQL</span>
         </div>
+      </div>
 
-        <div class="card skill-box">
-            <h3>Programming & Database</h3>
+      <div class="skill-card">
+        <h3>BI & Excel</h3>
 
-            <div class="tags">
-                <span class="tag">SQL</span>
-                <span class="tag">Python</span>
-                <span class="tag">Pandas</span>
-                <span class="tag">NumPy</span>
-                <span class="tag">MySQL</span>
-            </div>
+        <div class="tags">
+          <span class="tag">Power BI</span>
+          <span class="tag">DAX</span>
+          <span class="tag">Data Modeling</span>
+          <span class="tag">Advanced Excel</span>
+          <span class="tag">Power Query</span>
         </div>
+      </div>
 
     </div>
 
-</div>
+  </div>
 </section>
+
 
 <!-- EXPERIENCE -->
 <section id="experience">
-<div class="container">
+  <div class="container">
 
     <div class="section-title">
-        <div class="small">Experience</div>
-        <h2>Professional Experience</h2>
+      <small>Experience</small>
+      <h2>Professional Experience</h2>
     </div>
 
-    <div class="card experience">
+    <div class="experience-card">
 
-        <h3>Quantitative Research Contributor</h3>
+      <h3>Quantitative Research Contributor</h3>
 
-        <div class="company">
-            WorldQuant Research (India) Pvt. Ltd.
-        </div>
+      <div class="company">
+        WorldQuant Research (India) Pvt. Ltd.
+      </div>
 
-        <div class="date">
-            June 2024 – December 2024 · Part-Time · Remote
-        </div>
+      <div class="date">
+        Part-Time · Remote · June 2024 – December 2024
+      </div>
 
-        <ul>
-            <li>
-                Performed exploratory data analysis on financial market
-                price and volume datasets.
-            </li>
+      <ul>
+        <li>
+          Performed exploratory data analysis on financial market
+          price and volume datasets.
+        </li>
 
-            <li>
-                Evaluated data-driven patterns and potential inefficiencies
-                across market datasets.
-            </li>
+        <li>
+          Identified data-driven patterns and potential inefficiencies
+          across market datasets.
+        </li>
 
-            <li>
-                Earned Gold Consultant Certification for meeting research
-                quality and performance benchmarks.
-            </li>
-        </ul>
+        <li>
+          Earned Gold Consultant Certification for meeting research
+          quality and performance benchmarks.
+        </li>
+      </ul>
 
     </div>
 
-</div>
+  </div>
 </section>
 
-<!-- PROJECTS -->
+
+<!-- FEATURED PROJECTS -->
 <section id="projects">
-<div class="container">
+  <div class="container">
 
     <div class="section-title">
-        <div class="small">Portfolio</div>
-        <h2>Featured Projects</h2>
-        <p>Selected data analytics projects built using SQL, Python, Power BI and MySQL.</p>
+      <small>Portfolio</small>
+      <h2>Featured Projects</h2>
+      <p>
+        My three primary end-to-end analytics projects.
+      </p>
     </div>
 
     <div class="projects-grid">
 
-        <!-- PROJECT 1 -->
-        <div class="card project">
+      <!-- PROJECT 1 -->
+      <div class="project-card">
 
-            <div class="project-number">01</div>
+        <h3>Telecom Customer Retention & Churn Analysis</h3>
 
-            <h3>Telecom Customer Retention & Churn Analysis</h3>
-
-            <div class="tech">
-                SQL · Power BI
-            </div>
-
-            <ul>
-                <li>Analysed 6,400+ customer records.</li>
-                <li>Identified a 27% overall churn rate.</li>
-                <li>Found 46.5% higher churn among month-to-month customers.</li>
-                <li>Identified 41.1% churn among fiber customers.</li>
-                <li>Proposed strategies for a projected 14% churn reduction.</li>
-            </ul>
-
-            <a class="project-link"
-               href="https://github.com/abhay01pandey/Customer-Churn-Analysis-and-Predictive-Modeling-Dashboard"
-               target="_blank">
-               View on GitHub →
-            </a>
-
+        <div class="tags">
+          <span class="tag">SQL</span>
+          <span class="tag">Power BI</span>
+          <span class="tag">DAX</span>
         </div>
-
-        <!-- PROJECT 2 -->
-        <div class="card project">
-
-            <div class="project-number">02</div>
-
-            <h3>Customer Shopping Behavior & Segmentation</h3>
-
-            <div class="tech">
-                Python · SQL · Power BI
-            </div>
-
-            <ul>
-                <li>Analysed 3,900+ customer transactions.</li>
-                <li>Created clean, analysis-ready datasets.</li>
-                <li>Developed customer segments for targeted analysis.</li>
-                <li>Identified opportunities through Power BI dashboards.</li>
-            </ul>
-
-            <a class="project-link"
-               href="https://github.com/abhay01pandey/Customer-Shopping-Behavior-Analysis"
-               target="_blank">
-               View on GitHub →
-            </a>
-
-        </div>
-
-        <!-- PROJECT 3 -->
-        <div class="card project">
-
-            <div class="project-number">03</div>
-
-            <h3>Zepto E-Commerce Product & Inventory Analysis</h3>
-
-            <div class="tech">
-                MySQL
-            </div>
-
-            <ul>
-                <li>Analysed product and inventory data using MySQL.</li>
-                <li>Identified high-MRP out-of-stock products.</li>
-                <li>Analysed category-wise revenue potential.</li>
-                <li>Supported inventory prioritisation through data analysis.</li>
-            </ul>
-
-            <a class="project-link"
-               href="https://github.com/abhay01pandey/Zepto-Product-Insights-using-MySQL"
-               target="_blank">
-               View on GitHub →
-            </a>
-
-        </div>
-
-    </div>
-
-</div>
-</section>
-
-<!-- EDUCATION & CREDENTIALS -->
-<section id="credentials">
-<div class="container">
-
-    <div class="section-title">
-        <div class="small">Education & Credentials</div>
-        <h2>Education</h2>
-    </div>
-
-    <div class="education-grid">
-
-        <div class="education-item">
-            <h3>B.Tech – Information Technology</h3>
-            <p>Institute of Technology & Management (ITM), Gwalior</p>
-            <p class="education-date">2020 – 2024</p>
-        </div>
-
-        <div class="education-item">
-            <h3>Data Analytics Certifications</h3>
-            <p>
-                Oracle, Cisco and WorldQuant credentials covering
-                data, AI foundations and quantitative research.
-            </p>
-        </div>
-
-    </div>
-
-</div>
-</section>
-
-<!-- CERTIFICATIONS -->
-<section>
-<div class="container">
-
-    <div class="section-title">
-        <div class="small">Certifications</div>
-        <h2>Credentials</h2>
-    </div>
-
-    <div class="cert-grid">
-
-        <div class="cert">
-            <div>
-                <h3>Oracle Data Platform Foundations Associate</h3>
-                <p>Oracle · 2025</p>
-            </div>
-
-            <a href="https://catalog-education.oracle.com/ords/certview/sharebadge?id=C3E65992249BA17EEF53C1EB01FD68EE88FA696214A7FB48A694A7F0FAFC0166"
-               target="_blank">
-               View Certificate →
-            </a>
-        </div>
-
-        <div class="cert">
-            <div>
-                <h3>Oracle OCI AI Foundations Associate</h3>
-                <p>Oracle · 2025</p>
-            </div>
-
-            <a href="https://catalog-education.oracle.com/ords/certview/sharebadge?id=54ACBAE08B6ABDAB02F2E5D5BCC65BAF895B5F7638CF0EE87C350300A106CDBD"
-               target="_blank">
-               View Certificate →
-            </a>
-        </div>
-
-        <div class="cert">
-            <div>
-                <h3>Data Analytics Essentials</h3>
-                <p>Cisco</p>
-            </div>
-
-            <a href="https://www.credly.com/badges/2c74262d-64fc-401a-ab34-151614375623/linked_in_profile"
-               target="_blank">
-               View Certificate →
-            </a>
-        </div>
-
-        <div class="cert">
-            <div>
-                <h3>Gold Consultant – WorldQuant BRAIN</h3>
-                <p>WorldQuant</p>
-            </div>
-
-            <a href="https://drive.google.com/file/d/1g37HJOtgNS28Dd5roSvXKzuY23KXVDjA/view?usp=drivesdk"
-               target="_blank">
-               View Certificate →
-            </a>
-        </div>
-
-    </div>
-
-</div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="contact">
-<div class="container">
-
-    <div class="section-title">
-        <div class="small">Let's Talk</div>
-        <h2>Have an opportunity?</h2>
 
         <p>
-            I'm currently exploring opportunities in Data Analytics
-            and would be happy to connect.
+          Analysed 6,400+ customer records to identify churn patterns,
+          customer segments and retention opportunities.
         </p>
+
+        <a class="project-link"
+           href="https://github.com/abhay01pandey/Customer-Churn-Analysis-and-Predictive-Modeling-Dashboard"
+           target="_blank">
+          View on GitHub →
+        </a>
+
+      </div>
+
+
+      <!-- PROJECT 2 -->
+      <div class="project-card">
+
+        <h3>Customer Shopping Behavior & Segmentation</h3>
+
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">SQL</span>
+          <span class="tag">Power BI</span>
+        </div>
+
+        <p>
+          Analysed 3,900+ transactions to build clean datasets,
+          customer segments and business-focused dashboards.
+        </p>
+
+        <a class="project-link"
+           href="https://github.com/abhay01pandey/Customer-Shopping-Behavior-Analysis"
+           target="_blank">
+          View on GitHub →
+        </a>
+
+      </div>
+
+
+      <!-- PROJECT 3 -->
+      <div class="project-card">
+
+        <h3>Zepto E-Commerce Product & Inventory Analysis</h3>
+
+        <div class="tags">
+          <span class="tag">MySQL</span>
+          <span class="tag">SQL</span>
+          <span class="tag">E-Commerce</span>
+        </div>
+
+        <p>
+          Analysed product and inventory data to identify revenue
+          opportunities and support inventory prioritisation.
+        </p>
+
+        <a class="project-link"
+           href="https://github.com/abhay01pandey/Zepto-Product-Insights-using-MySQL"
+           target="_blank">
+          View on GitHub →
+        </a>
+
+      </div>
+
     </div>
 
-    <div class="contact-buttons">
-
-        <a href="mailto:abhaypandey10908@gmail.com"
-           class="btn btn-primary">
-           📧 Email Me
-        </a>
-
-        <a href="https://www.linkedin.com/in/abhaypandey18"
-           target="_blank"
-           class="btn">
-           LinkedIn
-        </a>
-
-        <a href="https://github.com/abhay01pandey"
-           target="_blank"
-           class="btn">
-           GitHub
-        </a>
-
-        <a href="https://drive.google.com/file/d/1Ix95l72szKxXoxfws69rARVUlw-ivB7u/view?usp=drivesdk"
-           target="_blank"
-           class="btn">
-           Resume
-        </a>
-
-    </div>
-
-</div>
+  </div>
 </section>
 
-<footer>
-<div class="conta
+
+<!-- OTHER ANALYTICS PROJECTS -->
+<section>
+  <div class="container">
+
+    <div class="section-title">
+      <small>More Work</small>
+      <h2>Other Analytics Projects</h2>
+      <p>
+        Additional data analysis, data cleaning, Excel, Power Query
+        and dashboard projects.
+      </p>
+    </div>
+
+    <div class="other-projects">
+
+      <div class="other-project">
+        <h3>Weather Data Exploratory Data Analysis</h3>
+        <p>Exploratory data analysis using Python.</p>
+        <a href="https://github.com/abhay01pandey/Weather-Data-Exploratory-Data-Analysis-using-Python" target="_blank">View Project →</a>
+      </div>
+
+      <div class="other-project">
+        <h3>Customer Purchase Review Data Cleaning</h3>
+        <p>Data cleaning and preparation project.</p>
+        <a href="https://github.com/abhay01pandey/Customer-Purchase-Review-Data-Cleaning-Project" target="_blank">View Project →</a>
+      </div>
+
+      <div class="other-project">
+        <h3>Retail Sales Data Cleaning & Transformation</h3>
+        <p>Data transformation using Power Query.</p>
+        <a href="https://github.com/abhay01pandey/Retail-Sales-Data-Cleaning-Transformation-Power-Query-" target="_blank">View Project →</a>
+      </div>
+
+      <div class="other-project">
+        <h3>Student Performance Data Cleaning & Analysis</h3>
+        <p>Python-based data cleaning and analysis.</p>
+        <a href="https://github.com/abhay01pandey/Student-Performance-Data-Cleaning-Analysis-Using-Python" target="_blank">View Project →</a>
+      </div>
+
+      <div class="other-project">
+        <h3>Interactive Healthcare Analytics Dashboard</h3>
+        <p>Interactive dashboard for healthcare analytics.</p>
+        <a href="https://github.com/abhay01pandey/Interactive-Healthcare-Analytics-Dashboard" target="_blank">View Project →</a>
+      </div>
+
+      <div class="other-project">
+        <h3>Website User Data Analysis</h3>
+        <p>Analysis of website user data.</p>
+        <a href="https://github.com/abhay01pandey/Website-User-Data-Analysis" target="_blank">View Project →</a>
+      </div>
+
+      <div class="other-project">
+        <h3>Sales Data Analysis & Profit Optimization</h3>
+        <p>Sales analysis focused on profitability insights.</p>
+        <a href="https://github.com/abhay01pandey/Sales-Data-Analysis-Profit-Optimization" target="_blank">View Project →</a>
+      </div>
+
+      <div class="other-project">
+        <h3>Excel-Based Sales & Procurement Dashboard</h3>
+        <p>Sales and procurement dashboard using Excel.</p>
+        <a href="https://github.com/abhay01pandey/Excel-Based-Sales-and-Procurement-Dashboard" target="_blank">View Project →</a>
+      </div>
+
+      <div class="other-project">
+        <h3>Dynamic Mobile Sales Performance Dashboard</h3>
+        <p>Dashboard for mobile sales performance analysis.</p>
+        <a href="https://github.com/abhay01pandey/Dynamic-Mobile-Sales-Performance-Dashboard" target="_blank">View Project →</a>
+      </div>
+
+      <div class="other-project">
+        <h3>Pizza Sales Performance Analytics Dashboard</h3>
+        <p>Sales performance analytics dashboard.</p>
+        <a href="https://github.com/abhay01pandey/Pizza-Sales-Performance-Analytics-Dashboard" target="_blank">View Project →</a>
+      </div>
+
+      <div class="other-project">
+        <h3>Reliance SMART Sales Analytics Dashboard</h3>
+        <p>Retail sales analytics dashboard.</p>
+        <a href="https://github.com/abhay01pandey/Reliance-SMART-Sales-Analytics-Dashboard" target="_blank">View Project →</a>
+      </div>
+
+      <div class="other-project">
+        <h3>E-Commerce Sales Performance Dashboard</h3>
+        <p>E-commerce sales performance analysis.</p>
